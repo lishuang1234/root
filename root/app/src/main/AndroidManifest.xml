@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baidu_lishuang10.root">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleInstance" android:label="root"
+            android:finishOnTaskLaunch="true" android:multiprocess="true"
+            android:process=":three" android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Phase1"
+            android:finishOnTaskLaunch="true"
+            android:label="Phase1"
+            android:launchMode="singleInstance"
+            android:multiprocess="true"
+            android:process=":three"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Phase2"
+            android:finishOnTaskLaunch="true"
+            android:label="Phase2"
+            android:launchMode="singleInstance"
+            android:multiprocess="true"
+            android:process=":two"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
